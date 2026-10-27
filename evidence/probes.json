@@ -1,0 +1,17 @@
+[
+  {"request_id": "ctl-normal-red", "tenant": "red", "path": "exports/red/q1.csv"},
+  {"request_id": "ctl-normal-blue", "tenant": "blue", "path": "exports/blue/q2.csv"},
+  {"request_id": "ctl-encoded-space", "tenant": "red", "path": "exports/red/quarter%201.csv"},
+  {"request_id": "ctl-missing-in-root", "tenant": "red", "path": "exports/red/nope.csv"},
+  {"request_id": "ctl-dot-segment-in-root", "tenant": "red", "path": "exports/red/./q1.csv"},
+  {"request_id": "probe-sibling-prefix", "tenant": "red", "path": "exports/red-old/staging.txt"},
+  {"request_id": "probe-encoded-traversal-other-tenant", "tenant": "red", "path": "exports/red/%2e%2e/blue/q2.csv"},
+  {"request_id": "probe-encoded-traversal-private", "tenant": "red", "path": "exports/red/%2E%2E/%2E%2E/private/operator.txt"},
+  {"request_id": "probe-encoded-slash-traversal", "tenant": "blue", "path": "exports/blue%2f..%2fred/q1.csv"},
+  {"request_id": "probe-other-tenant-plain", "tenant": "red", "path": "exports/blue/q2.csv"},
+  {"request_id": "probe-encoded-backslash", "tenant": "red", "path": "exports/red/%5cq1.csv"},
+  {"request_id": "probe-absolute", "tenant": "red", "path": "/exports/red/q1.csv"},
+  {"request_id": "probe-unknown-tenant", "tenant": "green", "path": "exports/green/x.csv"},
+  {"request_id": "probe-sibling-missing", "tenant": "red", "path": "exports/red-old/none.txt"},
+  {"request_id": "probe-double-encoded-space", "tenant": "red", "path": "exports/red/quarter%2520 1.csv"}
+]

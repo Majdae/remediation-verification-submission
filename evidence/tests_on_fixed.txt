@@ -1,0 +1,28 @@
+test_01_red_normal (test_download.DownloadTests.test_01_red_normal) ... ok
+test_02_blue_normal (test_download.DownloadTests.test_02_blue_normal) ... ok
+test_03_encoded_space (test_download.DownloadTests.test_03_encoded_space) ... ok
+test_04_encoded_slash_hex_case_equivalent (test_download.DownloadTests.test_04_encoded_slash_hex_case_equivalent) ... ok
+test_05_dot_segment_inside_root (test_download.DownloadTests.test_05_dot_segment_inside_root) ... ok
+test_06_sibling_prefix (test_download.DownloadTests.test_06_sibling_prefix) ... ok
+test_07_encoded_traversal_other_tenant (test_download.DownloadTests.test_07_encoded_traversal_other_tenant) ... ok
+test_08_encoded_traversal_uppercase_private (test_download.DownloadTests.test_08_encoded_traversal_uppercase_private) ... ok
+test_09_encoded_slash_traversal (test_download.DownloadTests.test_09_encoded_slash_traversal) ... ok
+test_10_plain_traversal (test_download.DownloadTests.test_10_plain_traversal) ... ok
+test_11_other_tenant_path (test_download.DownloadTests.test_11_other_tenant_path) ... ok
+test_12_private (test_download.DownloadTests.test_12_private) ... ok
+test_13_missing_allowed_file (test_download.DownloadTests.test_13_missing_allowed_file) ... ok
+test_14_unknown_tenant (test_download.DownloadTests.test_14_unknown_tenant) ... ok
+test_15_absolute_path (test_download.DownloadTests.test_15_absolute_path) ... ok
+test_16_encoded_absolute_path (test_download.DownloadTests.test_16_encoded_absolute_path) ... ok
+test_17_literal_backslash (test_download.DownloadTests.test_17_literal_backslash) ... ok
+test_18_encoded_backslash (test_download.DownloadTests.test_18_encoded_backslash) ... ok
+test_19_denial_independent_of_outside_existence (test_download.DownloadTests.test_19_denial_independent_of_outside_existence) ... ok
+test_20_double_encoding_decoded_once (test_download.DownloadTests.test_20_double_encoding_decoded_once) ... ok
+test_21_bare_root_denied (test_download.DownloadTests.test_21_bare_root_denied) ... ok
+test_22_double_encoded_name_not_decoded_twice (test_download.DownloadTests.test_22_double_encoded_name_not_decoded_twice) ... ok
+test_23_double_encoded_traversal_stays_in_root (test_download.DownloadTests.test_23_double_encoded_traversal_stays_in_root) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.001s
+
+OK

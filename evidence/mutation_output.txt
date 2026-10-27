@@ -1,0 +1,6 @@
+KILLED   drop trailing slash (sibling prefix)
+KILLED   check before decode
+KILLED   allow backslash
+EQUIVALENT (expected to survive: prefix check also rejects leading '/') allow absolute
+KILLED   double decode
+KILLED   skip normalization

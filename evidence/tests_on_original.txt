@@ -1,0 +1,86 @@
+.....FFFF........FF.F..
+======================================================================
+FAIL: test_06_sibling_prefix (test_download.DownloadTests.test_06_sibling_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 34, in test_06_sibling_prefix
+    def test_06_sibling_prefix(self): self.denied("red", "exports/red-old/staging.txt")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/candidate/tests/test_download.py", line 23, in denied
+    self.assertEqual(r["status"], 403, r)
+AssertionError: 200 != 403 : {'request_id': 't', 'status': 200, 'body': 'red-old staging token: DEMO_NONFUNCTIONAL'}
+
+======================================================================
+FAIL: test_07_encoded_traversal_other_tenant (test_download.DownloadTests.test_07_encoded_traversal_other_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 35, in test_07_encoded_traversal_other_tenant
+    def test_07_encoded_traversal_other_tenant(self): self.denied("red", "exports/red/%2e%2e/blue/q2.csv")
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/candidate/tests/test_download.py", line 23, in denied
+    self.assertEqual(r["status"], 403, r)
+AssertionError: 200 != 403 : {'request_id': 't', 'status': 200, 'body': 'blue forecast,340'}
+
+======================================================================
+FAIL: test_08_encoded_traversal_uppercase_private (test_download.DownloadTests.test_08_encoded_traversal_uppercase_private)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 36, in test_08_encoded_traversal_uppercase_private
+    def test_08_encoded_traversal_uppercase_private(self): self.denied("red", "exports/red/%2E%2E/%2E%2E/private/operator.txt")
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/candidate/tests/test_download.py", line 23, in denied
+    self.assertEqual(r["status"], 403, r)
+AssertionError: 200 != 403 : {'request_id': 't', 'status': 200, 'body': 'operator notes: fictional restricted data'}
+
+======================================================================
+FAIL: test_09_encoded_slash_traversal (test_download.DownloadTests.test_09_encoded_slash_traversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 37, in test_09_encoded_slash_traversal
+    def test_09_encoded_slash_traversal(self): self.denied("blue", "exports/blue%2f..%2fred/q1.csv")
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/candidate/tests/test_download.py", line 23, in denied
+    self.assertEqual(r["status"], 403, r)
+AssertionError: 200 != 403 : {'request_id': 't', 'status': 200, 'body': 'red forecast,120'}
+
+======================================================================
+FAIL: test_18_encoded_backslash (test_download.DownloadTests.test_18_encoded_backslash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 47, in test_18_encoded_backslash
+    def test_18_encoded_backslash(self): self.denied("red", "exports/red/%5cq1.csv")
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/candidate/tests/test_download.py", line 23, in denied
+    self.assertEqual(r["status"], 403, r)
+AssertionError: 404 != 403 : {'request_id': 't', 'status': 404, 'body': 'Missing'}
+
+======================================================================
+FAIL: test_19_denial_independent_of_outside_existence (test_download.DownloadTests.test_19_denial_independent_of_outside_existence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 50, in test_19_denial_independent_of_outside_existence
+    self.assertEqual((a["status"], a["body"]), (b["status"], b["body"]))
+AssertionError: Tuples differ: (200, 'red-old staging token: DEMO_NONFUNCTIONAL') != (404, 'Missing')
+
+First differing element 0:
+200
+404
+
+- (200, 'red-old staging token: DEMO_NONFUNCTIONAL')
++ (404, 'Missing')
+
+======================================================================
+FAIL: test_21_bare_root_denied (test_download.DownloadTests.test_21_bare_root_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/claude/candidate/tests/test_download.py", line 61, in test_21_bare_root_denied
+    self.denied("red", "exports/red"); self.denied("red", "exports/red/")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/candidate/tests/test_download.py", line 23, in denied
+    self.assertEqual(r["status"], 403, r)
+AssertionError: 404 != 403 : {'request_id': 't', 'status': 404, 'body': 'Missing'}
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.002s
+
+FAILED (failures=7)

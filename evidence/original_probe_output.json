@@ -1,0 +1,77 @@
+[
+  {
+    "request_id": "ctl-normal-red",
+    "status": 200,
+    "body": "red forecast,120"
+  },
+  {
+    "request_id": "ctl-normal-blue",
+    "status": 200,
+    "body": "blue forecast,340"
+  },
+  {
+    "request_id": "ctl-encoded-space",
+    "status": 200,
+    "body": "red encoded-name forecast,125"
+  },
+  {
+    "request_id": "ctl-missing-in-root",
+    "status": 404,
+    "body": "Missing"
+  },
+  {
+    "request_id": "ctl-dot-segment-in-root",
+    "status": 200,
+    "body": "red forecast,120"
+  },
+  {
+    "request_id": "probe-sibling-prefix",
+    "status": 200,
+    "body": "red-old staging token: DEMO_NONFUNCTIONAL"
+  },
+  {
+    "request_id": "probe-encoded-traversal-other-tenant",
+    "status": 200,
+    "body": "blue forecast,340"
+  },
+  {
+    "request_id": "probe-encoded-traversal-private",
+    "status": 200,
+    "body": "operator notes: fictional restricted data"
+  },
+  {
+    "request_id": "probe-encoded-slash-traversal",
+    "status": 200,
+    "body": "red forecast,120"
+  },
+  {
+    "request_id": "probe-other-tenant-plain",
+    "status": 403,
+    "body": "Denied"
+  },
+  {
+    "request_id": "probe-encoded-backslash",
+    "status": 404,
+    "body": "Missing"
+  },
+  {
+    "request_id": "probe-absolute",
+    "status": 403,
+    "body": "Denied"
+  },
+  {
+    "request_id": "probe-unknown-tenant",
+    "status": 403,
+    "body": "Denied"
+  },
+  {
+    "request_id": "probe-sibling-missing",
+    "status": 404,
+    "body": "Missing"
+  },
+  {
+    "request_id": "probe-double-encoded-space",
+    "status": 404,
+    "body": "Missing"
+  }
+]

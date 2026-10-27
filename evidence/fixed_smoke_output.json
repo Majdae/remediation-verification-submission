@@ -1,0 +1,17 @@
+[
+  {
+    "request_id": "normal-red",
+    "status": 200,
+    "body": "red forecast,120"
+  },
+  {
+    "request_id": "normal-blue",
+    "status": 200,
+    "body": "blue forecast,340"
+  },
+  {
+    "request_id": "normal-encoded-name",
+    "status": 200,
+    "body": "red encoded-name forecast,125"
+  }
+]
